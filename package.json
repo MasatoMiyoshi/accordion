@@ -1,0 +1,43 @@
+{
+  "name": "@masatomiyoshi/accordion",
+  "version": "1.0.0",
+  "description": "A javascript library for accordion component",
+  "source": "./src/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.module.js",
+  "umd:main": "./dist/index.umd.js",
+  "author": "Masato Miyoshi <miyoshi@sitebridge.co.jp>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MasatoMiyoshi/accordion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MasatoMiyoshi/accordion/issues"
+  },
+  "homepage": "https://github.com/MasatoMiyoshi/accordion#readme",
+  "keywords": [
+    "accordion",
+    "component"
+  ],
+  "scripts": {
+    "watch": "node_modules/microbundle/dist/cli.js watch --globals animejs/lib/anime.es.js=anime --no-compress",
+    "build": "node_modules/microbundle/dist/cli.js build --globals animejs/lib/anime.es.js=anime",
+    "test": "node_modules/jest/bin/jest.js",
+    "start": "http-server -p 8000"
+  },
+  "amdName": "Accordion",
+  "dependencies": {
+    "animejs": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/plugin-proposal-private-methods": "^7.17.12",
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.1",
+    "http-server": "^14.1.1",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "microbundle": "^0.15.0"
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="importmap">
+      {
+        "imports": {
+          "animejs/lib/anime.es.js": "/node_modules/animejs/lib/anime.es.js",
+          "@masatomiyoshi/accordion": "/dist/index.module.js"
+        }
+      }
+    </script>
+    <style>
+      .slide__item {
+        padding: 1em 0 1em 0;
+        border: 3px solid black;
+        margin: 5px 0 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-up__link"><a href="#">Slide up</a></div>
+    <div class="slide-down__link"><a href="#">Slide down</a></div>
+    <div class="slide-toggle__link"><a href="#">Slide toggle</a></div>
+    <div class="slide__item">
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
+    </div>
+    <script type="module">
+      import { slideUp, slideDown, slideToggle } from "@masatomiyoshi/accordion"
+      document.querySelector('.slide-up__link').addEventListener('click', () => {
+        slideUp(document.querySelector('.slide__item'));
+      });
+      document.querySelector('.slide-down__link').addEventListener('click', () => {
+        slideDown(document.querySelector('.slide__item'));
+      });
+      document.querySelector('.slide-toggle__link').addEventListener('click', () => {
+        slideToggle(document.querySelector('.slide__item'),
+          {
+            duration: 1000,
+            easing: 'linear',
+            beginFunc: () => { console.log("begin slideToggle") },
+            completeFunc: () => { console.log("complete slideToggle") }
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
