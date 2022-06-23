@@ -8,6 +8,9 @@ module.exports = {
     "src",
     "node_modules"
   ],
+  moduleNameMapper: {
+    "\\.(css|scss|less)$": "identity-obj-proxy"
+  },
   roots: [
     "<rootDir>/test"
   ],

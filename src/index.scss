@@ -1,0 +1,16 @@
+.accordion {
+  &--visible {
+    overflow: hidden;
+  }
+  &--upping {
+    overflow: hidden;
+  }
+  &--hidden {
+    display: none;
+    overflow: hidden;
+  }
+  &--downing {
+    display: block;
+    overflow: hidden;
+  }
+}
