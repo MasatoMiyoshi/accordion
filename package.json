@@ -1,6 +1,6 @@
 {
   "name": "@masatomiyoshi/accordion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A javascript library for accordion component",
   "source": "./src/index.js",
   "main": "./dist/index.js",
