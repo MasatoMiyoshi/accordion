@@ -20,13 +20,18 @@ Import function:
 import { slideUp, slideDown, slideToggle } from '@masatomiyoshi/accordion'
 ```
 
+Import css:
+```css
+@import '@masatomiyoshi/accordion'
+```
+
 Build html as follows:
 
 ```html
 <div class="slide-up__link"><a href="#">Slide up</a></div>
 <div class="slide-down__link"><a href="#">Slide down</a></div>
 <div class="slide-toggle__link"><a href="#">Slide toggle</a></div>
-<div class="slide__item">
+<div class="slide__item accordion--visible">
   <ul>
     <li>Item 1</li>
     <li>Item 2</li>
