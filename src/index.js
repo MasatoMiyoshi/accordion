@@ -121,16 +121,15 @@ function setClass(elem, kind) {
 }
 
 function heightProperty(elem) {
-  let copy = elem.cloneNode(true);
-  copy.style.cssText = '';
-  copy.style.cssText = 'display: block; height: auto; overflow: hidden; visibility: hidden;';
-  elem.parentNode.appendChild(copy);
-  let height = parseFloat(computedStyle(copy, 'height'));
-  let paddingTop = parseFloat(computedStyle(copy, 'padding-top'));
-  let paddingBottom = parseFloat(computedStyle(copy, 'padding-bottom'));
-  let marginTop = parseFloat(computedStyle(copy, 'margin-top'));
-  let marginBottom = parseFloat(computedStyle(copy, 'margin-bottom'));
-  elem.parentNode.removeChild(copy);
+  let cssText = elem.style.cssText;
+  elem.style.cssText = '';
+  elem.style.cssText = 'display: block; height: auto;';
+  let height = parseFloat(computedStyle(elem, 'height'));
+  let paddingTop = parseFloat(computedStyle(elem, 'padding-top'));
+  let paddingBottom = parseFloat(computedStyle(elem, 'padding-bottom'));
+  let marginTop = parseFloat(computedStyle(elem, 'margin-top'));
+  let marginBottom = parseFloat(computedStyle(elem, 'margin-bottom'));
+  elem.style.cssText = cssText;
 
   return {
     height: height,
