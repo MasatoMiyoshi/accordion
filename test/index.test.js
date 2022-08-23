@@ -21,7 +21,7 @@ describe('index', () => {
     `;
   });
 
-  it('hides content', async () => {
+  it('hides content', () => {
     let link = document.querySelector('.slide-up__link');
     link.addEventListener('click', () => {
       slideUp(document.querySelector('.slide-up__item'));
