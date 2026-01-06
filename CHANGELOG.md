@@ -2,7 +2,7 @@
 
 ## 1.0.4
 
-- Update dependencies
+- Update dependencies and devDependencies.
 
 ## 1.0.3
 

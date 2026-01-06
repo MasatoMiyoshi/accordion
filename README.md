@@ -22,7 +22,7 @@ import { slideUp, slideDown, slideToggle } from '@masatomiyoshi/accordion'
 
 Import css:
 ```css
-@import '@masatomiyoshi/accordion'
+@use '@masatomiyoshi/accordion'
 ```
 
 Build html as follows:
