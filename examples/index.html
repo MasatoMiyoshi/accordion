@@ -5,7 +5,7 @@
     <script type="importmap">
       {
         "imports": {
-          "animejs/lib/anime.es.js": "/node_modules/animejs/lib/anime.es.js",
+          "animejs": "/node_modules/animejs/dist/modules/index.js",
           "@masatomiyoshi/accordion": "/dist/index.module.mjs"
         }
       }
@@ -41,7 +41,7 @@
         slideToggle(document.querySelector('.slide__item'),
           {
             duration: 1000,
-            easing: 'linear',
+            ease: 'linear',
             beginFunc: () => { console.log("begin slideToggle") },
             completeFunc: () => { console.log("complete slideToggle") }
           }

@@ -1,9 +1,9 @@
-import anime from "animejs/lib/anime.es.js";
+import { animate, utils } from 'animejs';
 import './index.scss';
 
 export function slideUp(elem, options) {
   if (isHidden(elem) || isUpping(elem)) return;
-  anime.remove(elem);
+  utils.remove(elem);
   setClass(elem, 'upping');
 
   options = Object.assign(defaultOptions(), options);
@@ -15,19 +15,18 @@ export function slideUp(elem, options) {
   if (elem.style.marginTop == '') elem.style.marginTop = `${hprop.marginTop}px`;
   if (elem.style.marginBottom == '') elem.style.marginBottom = `${hprop.marginBottom}px`;
 
-  anime({
-    targets: elem,
+  animate(elem, {
     height: '0px',
     paddingTop: '0px',
     paddingBottom: '0px',
     marginTop: '0px',
     marginBottom: '0px',
     duration: options.duration,
-    easing: options.easing,
-    begin: function(a) {
+    ease: options.ease,
+    onBegin: function(a) {
       if (options.beginFunc !== undefined) options.beginFunc();
     },
-    complete: function(a) {
+    onComplete: function(a) {
       setClass(elem, 'hidden');
       elem.style.height = null;
       elem.style.paddingTop = null;
@@ -41,7 +40,7 @@ export function slideUp(elem, options) {
 
 export function slideDown(elem, options) {
   if (isVisible(elem) || isDowning(elem)) return;
-  anime.remove(elem);
+  utils.remove(elem);
   setClass(elem, 'downing');
 
   options = Object.assign(defaultOptions(), options);
@@ -53,19 +52,18 @@ export function slideDown(elem, options) {
   if (elem.style.marginTop == '') elem.style.marginTop = '0px';
   if (elem.style.marginBottom == '') elem.style.marginBottom = '0px';
 
-  anime({
-    targets: elem,
+  animate(elem, {
     height: `${hprop.height}px`,
     paddingTop: `${hprop.paddingTop}px`,
     paddingBottom: `${hprop.paddingBottom}px`,
     marginTop: `${hprop.marginTop}px`,
     marginBottom: `${hprop.marginBottom}px`,
     duration: options.duration,
-    easing: options.easing,
-    begin: function(a) {
+    ease: options.ease,
+    onBegin: function(a) {
       if (options.beginFunc !== undefined) options.beginFunc();
     },
-    complete: function(a) {
+    onComplete: function(a) {
       setClass(elem, 'visible');
       elem.style.display = null;
       elem.style.height = null;
@@ -90,7 +88,7 @@ export function slideToggle(elem, options) {
 function defaultOptions() {
   return {
     duration: 400,
-    easing: 'easeInOutCubic',
+    ease: 'inOutCubic',
     beginFunc: undefined,
     completeFunc: undefined
   };
