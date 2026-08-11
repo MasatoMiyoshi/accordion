@@ -1,6 +1,6 @@
 {
   "name": "@masatomiyoshi/accordion",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A javascript library for accordion component",
   "engines": {
     "node": ">=22.13",
