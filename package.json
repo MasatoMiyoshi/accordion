@@ -2,6 +2,10 @@
   "name": "@masatomiyoshi/accordion",
   "version": "1.0.4",
   "description": "A javascript library for accordion component",
+  "engines": {
+    "node": ">=22.13",
+    "pnpm": ">=11.0"
+  },
   "source": "./src/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.module.mjs",
